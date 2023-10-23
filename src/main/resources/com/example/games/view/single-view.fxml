@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
-<VBox  xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="20.0"
-       fx:controller="com.example.games.controller.SingleController">
-    <Text>Single</Text>
-</VBox>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            fx:controller="com.example.games.controller.SingleController">
+
+    <fx:include source="layout-view.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+
+    <VBox xmlns:fx="http://javafx.com/fxml" prefHeight="565.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.topAnchor="35.0" alignment="CENTER" spacing="20.0">
+        <Text>Single</Text>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.games.controller.LayoutController">
+
+    <AnchorPane id="menu" fx:id="layout" prefHeight="35.0" prefWidth="600.0">
+        <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="600.0">
+            <Button fx:id="close" mnemonicParsing="false" onAction="#onActionClose" prefHeight="35.0" prefWidth="35.0" text="X" />
+        </HBox>
+    </AnchorPane>
+
+</AnchorPane>

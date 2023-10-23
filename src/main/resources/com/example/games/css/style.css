@@ -6,9 +6,26 @@
 .region {
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 3);
 }
+
+#menu {
+    -fx-background-color: rgba(40, 36, 37, 0.8);
+    -fx-background-radius: 10px 10px 0px 0px;
+}
+
+#close {
+    -fx-background-radius: 10px 0px 0px 0px;
+    -fx-text-fill: #e4d8b4;
+    -fx-background-color: transparent;
+}
+
+#close:hover {
+    -fx-background-color: #dc2626;
+    -fx-cursor: hand;
+}
+
 #single, #online {
     -fx-label-padding: 10px;
-    -fx-text-fill:  #282425;
+    -fx-text-fill: #282425;
     -fx-background-color: #a4cbb4;
     -fx-background-radius: 40px;
     -fx-min-width: 200px;
@@ -20,7 +37,8 @@
     -fx-cursor: hand;
     -fx-border-width: 0;
 }
+
 #single:hover, #online:hover {
-    -fx-background-color:  #a4cbb4;
+    -fx-background-color: #a4cbb4;
     -fx-opacity: 1;
 }
