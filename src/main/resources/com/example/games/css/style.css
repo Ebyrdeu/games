@@ -1,0 +1,26 @@
+.root {
+    -fx-background-color: rgba(40, 36, 37, 0.8);
+    -fx-background-radius: 10px;
+}
+
+.region {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 3);
+}
+#single, #online {
+    -fx-label-padding: 10px;
+    -fx-text-fill:  #282425;
+    -fx-background-color: #a4cbb4;
+    -fx-background-radius: 40px;
+    -fx-min-width: 200px;
+    -fx-max-width: 200px;
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-font-family: 'JetBrains Mono', monospace;
+    -fx-opacity: 0.95;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+#single:hover, #online:hover {
+    -fx-background-color:  #a4cbb4;
+    -fx-opacity: 1;
+}
