@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            fx:controller="com.example.games.controller.OnlineController">
+<Pane stylesheets="@../css/style.css"
+      prefHeight="600.0" prefWidth="600.0"
+      xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.games.controller.OnlineController">
 
-    <fx:include source="layout-view.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+    <fx:include source="layout-view.fxml"/>
 
-    <VBox xmlns:fx="http://javafx.com/fxml" prefHeight="565.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0"
-          AnchorPane.topAnchor="35.0" alignment="CENTER" spacing="20.0">
-        <Text>Single</Text>
+    <VBox spacing="10" alignment="CENTER" layoutY="35.0" prefHeight="565.0" prefWidth="600.0">
+        <Text>Online</Text>
     </VBox>
-</AnchorPane>
+
+</Pane>
+
+

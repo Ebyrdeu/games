@@ -1,10 +1,39 @@
 .root {
-    -fx-background-color: rgba(40, 36, 37, 0.8);
     -fx-background-radius: 10px;
+    -fx-accent: #DC8850;
+    -fx-focus-color: -fx-accent;
+    -fx-base: rgba(40, 36, 37, 0.8);
+    -fx-background-color: -fx-base;
+    -fx-control-inner-background: -fx-base;
+    -fx-control-inner-background-alt: -fx-control-inner-background;
+    -fx-font-family: 'JetBrains Mono', monospace;
 }
 
-.region {
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 3);
+.text-field {
+    -fx-prompt-text-fill: #282425;
+}
+
+.titulo {
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+.button:default {
+    -fx-base: -fx-accent;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-focus-traversable: false;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-text-fill: #282425;
+}
+
+.scroll-bar {
+    -fx-background-color: derive(-fx-base, 45%)
 }
 
 #menu {
@@ -12,26 +41,28 @@
     -fx-background-radius: 10px 10px 0px 0px;
 }
 
+#close, #minimize {
+    -fx-text-fill: #e4d8b4;
+}
+
+#close:hover, #minimize:hover {
+    -fx-text-fill: #EDE6D4;
+}
+
 #close {
     -fx-background-radius: 10px 0px 0px 0px;
-    -fx-text-fill: #e4d8b4;
-    -fx-background-color: transparent;
 }
 
 #close:hover {
     -fx-background-color: #dc2626;
-    -fx-cursor: hand;
 }
 
 #minimize {
     -fx-background-radius: 0px;
-    -fx-text-fill: #e4d8b4;
-    -fx-background-color: transparent;
 }
 
 #minimize:hover {
     -fx-background-color: #2563eb;
-    -fx-cursor: hand;
 }
 
 #single, #online {
@@ -39,17 +70,13 @@
     -fx-text-fill: #282425;
     -fx-background-color: #a4cbb4;
     -fx-background-radius: 40px;
-    -fx-min-width: 200px;
-    -fx-max-width: 200px;
+    -fx-pref-width: 200px;
     -fx-font-size: 20px;
     -fx-font-weight: 600;
-    -fx-font-family: 'JetBrains Mono', monospace;
-    -fx-opacity: 0.95;
     -fx-cursor: hand;
     -fx-border-width: 0;
 }
 
 #single:hover, #online:hover {
-    -fx-background-color: #a4cbb4;
-    -fx-opacity: 1;
+    -fx-background-color: derive(#a4cbb4, -15%);
 }

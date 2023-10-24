@@ -14,6 +14,7 @@
         <junit.version>5.9.2</junit.version>
     </properties>
 
+
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -60,7 +61,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.games/com.example.games.GamesApplication</mainClass>
+                            <mainClass>com.example.games/com.example.games.Launcher</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
