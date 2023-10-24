@@ -1,7 +1,6 @@
 package com.example.games.controller;
 
 import com.example.games.Launcher;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,7 +19,7 @@ public class MenuController {
     }
 
     @FXML
-    void onSinglePlay(ActionEvent event) {
+    void onSinglePlay() {
         try {
             changeScene("single-view.fxml");
         } catch (IOException e) {
@@ -29,7 +28,7 @@ public class MenuController {
     }
 
     @FXML
-    void onOnlinePlay(ActionEvent event) {
+    void onOnlinePlay() {
         try {
             changeScene("online-view.fxml");
         } catch (IOException e) {
