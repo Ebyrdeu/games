@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
-<Pane stylesheets="@../css/style.css"
-      prefHeight="600.0" prefWidth="600.0"
-      xmlns="http://javafx.com/javafx/17.0.2-ea"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.games.controller.SingleController">
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
 
-    <fx:include source="layout-view.fxml"/>
+<Pane
+        prefHeight="600.0"
+        prefWidth="600.0"
+        stylesheets="@../css/style.css"
+        xmlns="http://javafx.com/javafx/17.0.2-ea"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.games.controller.SingleController">
 
-    <VBox spacing="10" alignment="CENTER" layoutY="35.0" prefHeight="565.0" prefWidth="600.0">
-        <Text>Single</Text>
-    </VBox>
+    <fx:include source="layout-view.fxml" />
+
+     <Canvas fx:id="canvas" height="565.0" layoutY="35.0" width="600.0" />
 
 </Pane>

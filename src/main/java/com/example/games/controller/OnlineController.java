@@ -1,4 +1,8 @@
 package com.example.games.controller;
 
-public class OnlineController {
+public class OnlineController implements Renderer {
+    @Override
+    public void render() {
+
+    }
 }
