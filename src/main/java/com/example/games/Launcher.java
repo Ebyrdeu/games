@@ -28,15 +28,10 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = getRoot();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/menu-view.fxml")));
+
         Scene scene = getScene(root);
         getStage(stage, scene);
-    }
-
-    private Parent getRoot() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/menu-view.fxml")));
-        root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("css/style.css")).toExternalForm());
-        return root;
     }
 
     private static void getStage(Stage stage, Scene scene) {
