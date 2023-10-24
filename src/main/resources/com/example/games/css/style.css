@@ -23,6 +23,17 @@
     -fx-cursor: hand;
 }
 
+#minimize {
+    -fx-background-radius: 0px;
+    -fx-text-fill: #e4d8b4;
+    -fx-background-color: transparent;
+}
+
+#minimize:hover {
+    -fx-background-color: #2563eb;
+    -fx-cursor: hand;
+}
+
 #single, #online {
     -fx-label-padding: 10px;
     -fx-text-fill: #282425;

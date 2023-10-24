@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 public class LayoutController {
     public AnchorPane layout;
     public Button close;
+    public Button minimize;
     private double xOffset = 0, yOffset = 0;
 
     @FXML
@@ -26,8 +27,14 @@ public class LayoutController {
     }
 
     @FXML
-    void onActionClose(ActionEvent event) {
+    void onApplicationClose(ActionEvent event) {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    void onApplicationMinimize(ActionEvent event) {
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 }

@@ -7,7 +7,8 @@
 
     <AnchorPane id="menu" fx:id="layout" prefHeight="35.0" prefWidth="600.0">
         <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="600.0">
-            <Button fx:id="close" mnemonicParsing="false" onAction="#onActionClose" prefHeight="35.0" prefWidth="35.0" text="X" />
+            <Button fx:id="close" mnemonicParsing="false" onAction="#onApplicationClose" prefHeight="35.0" prefWidth="35.0" text="X" />
+            <Button fx:id="minimize" mnemonicParsing="false" onAction="#onApplicationMinimize" prefHeight="35.0" prefWidth="35.0" text="-" />
         </HBox>
     </AnchorPane>
 
