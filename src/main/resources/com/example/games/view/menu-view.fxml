@@ -3,17 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane stylesheets="@../css/style.css"
-      prefHeight="600.0" prefWidth="600.0"
-      xmlns="http://javafx.com/javafx/17.0.2-ea"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.games.controller.MenuController">
+<Pane prefHeight="635.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.games.controller.MenuController">
 
-    <fx:include source="layout-view.fxml"/>
+    <fx:include source="layout-view.fxml" />
 
-    <VBox spacing="10" alignment="CENTER" layoutY="35.0" prefHeight="565.0" prefWidth="600.0">
-        <Button fx:id="single" onAction="#onSinglePlay" mnemonicParsing="false" text="Single"/>
-        <Button fx:id="online" onAction="#onOnlinePlay" mnemonicParsing="false" prefWidth="257.0" text="Online"/>
+    <VBox alignment="CENTER" layoutY="35.0" prefHeight="600.0" prefWidth="600.0" spacing="10">
+        <Button fx:id="single" mnemonicParsing="false" onAction="#onSinglePlay" text="PVE" />
+        <Button fx:id="online" mnemonicParsing="false" onAction="#onOnlinePlay" prefWidth="257.0" text="PVP" />
     </VBox>
 
 </Pane>

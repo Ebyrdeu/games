@@ -41,6 +41,10 @@
     -fx-background-radius: 10px 10px 0px 0px;
 }
 
+#layout, #restartLayout {
+    -fx-background-radius: 10px;
+}
+
 #close, #minimize {
     -fx-text-fill: #e4d8b4;
 }
@@ -65,7 +69,14 @@
     -fx-background-color: #2563eb;
 }
 
-#single, #online {
+#gameStatus, #gameScore {
+    -fx-text-fill: #a4cbb4;
+    -fx-font-weight: 900;
+    -fx-font-size: 20px;
+
+}
+
+#single, #online, #restartBtn {
     -fx-label-padding: 10px;
     -fx-text-fill: #282425;
     -fx-background-color: #a4cbb4;
@@ -79,4 +90,24 @@
 
 #single:hover, #online:hover {
     -fx-background-color: derive(#a4cbb4, -15%);
+}
+
+#btn7 {
+    -fx-background-radius: 0px 0px 0px 10px !important;
+}
+
+#btn9 {
+    -fx-background-radius: 0px 0px 10px 0px !important;
+}
+
+#board > .button {
+    -fx-background-radius: 0px;
+    -fx-font-size: 40px;
+    -fx-font-weight: 900;
+}
+
+
+
+#board > .button:hover {
+    -fx-background-color: rgba(164, 203, 180, 0.4);
 }

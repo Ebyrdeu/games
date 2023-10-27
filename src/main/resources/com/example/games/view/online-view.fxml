@@ -4,10 +4,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 <Pane stylesheets="@../css/style.css"
-      prefHeight="600.0" prefWidth="600.0"
+      prefHeight="635.0" prefWidth="600.0"
       xmlns="http://javafx.com/javafx/17.0.2-ea"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.games.controller.OnlineController">
+      fx:controller="com.example.games.controller.PVPController">
 
     <fx:include source="layout-view.fxml"/>
 

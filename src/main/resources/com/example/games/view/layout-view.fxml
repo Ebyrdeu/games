@@ -3,18 +3,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane stylesheets="@../css/style.css"
-      fx:id="menu"
-      prefHeight="600.0"
-      prefWidth="600.0"
-      xmlns="http://javafx.com/javafx/17.0.2-ea"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.games.controller.LayoutController"
->
+<Pane id="layout" fx:id="menu" prefHeight="635.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.games.controller.LayoutController">
 
-   <HBox id="menu" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="600.0">
-       <Button fx:id="close" mnemonicParsing="false" onAction="#onApplicationClose" prefHeight="35.0" prefWidth="35.0" text="✕" />
-       <Button fx:id="minimize" mnemonicParsing="false" onAction="#onApplicationMinimize" prefHeight="35.0" prefWidth="35.0" text="―" />
+   <HBox spacing="10" id="menu" alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="600.0">
+      <HBox>
+          <Button fx:id="close" mnemonicParsing="false" onAction="#onApplicationClose" prefHeight="35.0" prefWidth="35.0" text="✕" />
+          <Button fx:id="minimize" mnemonicParsing="false" onAction="#onApplicationMinimize" prefHeight="35.0" prefWidth="35.0" text="―" />
+      </HBox>
+
+    <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" spacing="10">
+        <Label id="gameScore" disable="true" text="0:0" />
+        <Label id="gameStatus" disable="true" />
+    </HBox>
    </HBox>
 
 </Pane>

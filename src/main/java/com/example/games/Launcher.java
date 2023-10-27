@@ -1,5 +1,6 @@
 package com.example.games;
 
+import com.example.games.lib.ui.Constants;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +14,6 @@ import java.util.Objects;
 
 public class Launcher extends Application {
 
-    public static final int WINDOW_SIZE = 600;
     private static Stage primaryStage;
 
     private static Scene scene;
@@ -42,7 +42,7 @@ public class Launcher extends Application {
     }
 
     private Scene getScene(Parent root) {
-        scene = new Scene(root, WINDOW_SIZE, WINDOW_SIZE);
+        scene = new Scene(root, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
         scene.setFill(Color.TRANSPARENT);
 
         return scene;
