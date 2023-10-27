@@ -26,13 +26,9 @@ public class PVEModel {
 
     private static GameStatus getWinningConditions(List<Button> btnList, String btnText) {
         for (int[] winCon : Constants.WIN_CONDITIONS) {
-            int winByRows = winCon[0];
-            int winByColumns = winCon[1];
-            int winByDiagonals = winCon[2];
-
-            var btn1 = btnList.get(winByRows);
-            var btn2 = btnList.get(winByColumns);
-            var btn3 = btnList.get(winByDiagonals);
+            var btn1 = btnList.get(winCon[0]);
+            var btn2 = btnList.get(winCon[1]);
+            var btn3 = btnList.get(winCon[2]);
 
             if (isConditionMatched(btnText, btn1, btn2, btn3)) return GameStatus.OVER;
         }
