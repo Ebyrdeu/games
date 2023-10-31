@@ -1,7 +1,7 @@
 package com.example.games.model;
 
-import com.example.games.lib.ui.Constants;
-import com.example.games.lib.ui.GameStatus;
+import com.example.games.lib.utils.Constants;
+import com.example.games.lib.utils.GameStatus;
 import javafx.scene.control.Button;
 
 import java.util.List;

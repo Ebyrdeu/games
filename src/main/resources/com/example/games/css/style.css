@@ -30,6 +30,7 @@
 
 .button:hover {
     -fx-text-fill: #282425;
+
 }
 
 .scroll-bar {
@@ -76,7 +77,7 @@
 
 }
 
-#single, #online, #restartBtn {
+#single, #online, #restartBtn, #startServer, #joinServer {
     -fx-label-padding: 10px;
     -fx-text-fill: #282425;
     -fx-background-color: #a4cbb4;
@@ -88,7 +89,17 @@
     -fx-border-width: 0;
 }
 
-#single:hover, #online:hover {
+
+#joinServer {
+    -fx-background-color: #ef9995;
+
+}
+
+ #joinServer:hover {
+    -fx-background-color: derive(#ef9995, -15%);
+}
+
+#single:hover, #online:hover, #startServer:hover {
     -fx-background-color: derive(#a4cbb4, -15%);
 }
 

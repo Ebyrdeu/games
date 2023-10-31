@@ -1,28 +1,22 @@
 package com.example.games.controller;
 
-import com.example.games.Launcher;
+import com.example.games.lib.utils.Log;
+import com.example.games.lib.utils.Utils;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class MenuController {
     public Button single;
     public Button online;
 
-    private void changeScene(String path) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(Launcher.class.getResource("view/" + path)));
-        Launcher.getScene().setRoot(root);
-    }
-
     @FXML
     void onSinglePlay() {
         try {
-            changeScene("single-view.fxml");
+            Utils.changeScene("single-view.fxml");
         } catch (IOException e) {
+            Log.error("Error on single-view.fxml");
             throw new RuntimeException(e);
         }
     }
@@ -30,8 +24,9 @@ public class MenuController {
     @FXML
     void onOnlinePlay() {
         try {
-            changeScene("online-view.fxml");
+            Utils.changeScene("online-view.fxml");
         } catch (IOException e) {
+            Log.error("Error on online-view.fxml");
             throw new RuntimeException(e);
         }
     }

@@ -2,7 +2,7 @@
 
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
 <Pane stylesheets="@../css/style.css"
       prefHeight="635.0" prefWidth="600.0"
       xmlns="http://javafx.com/javafx/17.0.2-ea"
@@ -12,7 +12,8 @@
     <fx:include source="layout-view.fxml"/>
 
     <VBox spacing="10" alignment="CENTER" layoutY="35.0" prefHeight="565.0" prefWidth="600.0">
-        <Text>Online</Text>
+        <Button id="startServer" onAction="#onServerStart" text="Host a Game"/>
+        <Button id="joinServer" onAction="#onServerJoin" text="Join to a Game"/>
     </VBox>
 
 </Pane>

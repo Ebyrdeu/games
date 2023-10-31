@@ -1,6 +1,6 @@
 package com.example.games;
 
-import com.example.games.lib.ui.Constants;
+import com.example.games.lib.utils.Constants;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
