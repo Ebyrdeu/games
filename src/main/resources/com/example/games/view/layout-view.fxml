@@ -15,7 +15,7 @@
             <Button fx:id="minimize" mnemonicParsing="false" onAction="#onApplicationMinimize" prefHeight="35.0"
                     prefWidth="35.0" text="―"/>
             <Button fx:id="logWindow" mnemonicParsing="false" onAction="#onLogWindowOpen" prefHeight="35.0"
-                    prefWidth="35.0" text="D"/>
+                    prefWidth="35.0" text="録"/>
         </HBox>
 
         <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" spacing="10">
