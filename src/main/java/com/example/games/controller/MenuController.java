@@ -24,9 +24,9 @@ public class MenuController {
     @FXML
     void onOnlinePlay() {
         try {
-            Utils.changeScene("online-view.fxml");
+            Utils.changeScene("online-menu-view.fxml");
         } catch (IOException e) {
-            Log.error("Error on online-view.fxml");
+            Log.error("Error on online-menu-view.fxml");
             throw new RuntimeException(e);
         }
     }

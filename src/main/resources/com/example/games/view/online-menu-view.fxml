@@ -7,7 +7,7 @@
       prefHeight="635.0" prefWidth="600.0"
       xmlns="http://javafx.com/javafx/17.0.2-ea"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.games.controller.PVPController">
+      fx:controller="com.example.games.controller.PVPMenuController">
 
     <fx:include source="layout-view.fxml"/>
 
