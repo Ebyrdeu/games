@@ -3,7 +3,6 @@ package com.example.games.lib.utils;
 import com.example.games.Launcher;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-
 import java.io.IOException;
 import java.util.Objects;
 

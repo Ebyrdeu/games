@@ -37,7 +37,7 @@
     -fx-background-color: derive(-fx-base, 45%)
 }
 
-#menu {
+#topWindowBar {
     -fx-background-color: rgba(40, 36, 37, 0.8);
     -fx-background-radius: 10px 10px 0px 0px;
 }
@@ -46,11 +46,11 @@
     -fx-background-radius: 10px;
 }
 
-#close, #minimize {
+#close, #minimize, #logWindow {
     -fx-text-fill: #e4d8b4;
 }
 
-#close:hover, #minimize:hover {
+#close:hover, #minimize:hover, #logWindow {
     -fx-text-fill: #EDE6D4;
 }
 
@@ -62,8 +62,12 @@
     -fx-background-color: #dc2626;
 }
 
-#minimize {
+#minimize, #logWindow {
     -fx-background-radius: 0px;
+}
+
+#logWindow:hover {
+    -fx-background-color: #DC8850;
 }
 
 #minimize:hover {
@@ -95,7 +99,7 @@
 
 }
 
- #joinServer:hover {
+#joinServer:hover {
     -fx-background-color: derive(#ef9995, -15%);
 }
 
@@ -116,7 +120,6 @@
     -fx-font-size: 40px;
     -fx-font-weight: 900;
 }
-
 
 
 #board > .button:hover {
