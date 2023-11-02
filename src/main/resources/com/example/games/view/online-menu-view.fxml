@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
-<Pane stylesheets="@../css/style.css"
-      prefHeight="635.0" prefWidth="600.0"
-      xmlns="http://javafx.com/javafx/17.0.2-ea"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.games.controller.PVPMenuController">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-    <fx:include source="layout-view.fxml"/>
+<Pane prefHeight="635.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.games.controller.pvp.PVPMenuController">
 
-    <VBox spacing="10" alignment="CENTER" layoutY="35.0" prefHeight="565.0" prefWidth="600.0">
-        <Button id="startServer" onAction="#onServerStart" text="Host a Game"/>
-        <Button id="joinServer" onAction="#onServerJoin" text="Join to a Game"/>
+    <fx:include source="layout-view.fxml" />
+    <VBox alignment="CENTER" layoutY="35.0" prefHeight="565.0" prefWidth="600.0" spacing="10">
+       <TextField fx:id="joinText" alignment="CENTER" visible="false"/>
+        <Button id="startServer" onAction="#onServerStart" text="Host Game" />
+        <Button fx:id="joinServer" onAction="#onServerJoin" text="Enter ip to join" />
     </VBox>
 
 </Pane>
-
-

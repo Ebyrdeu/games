@@ -30,8 +30,12 @@ public class Launcher extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/menu-view.fxml")));
 
-        Scene scene = getScene(root);
+        var scene = getScene(root);
         getStage(stage, scene);
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 
     private static void getStage(Stage stage, Scene scene) {
@@ -46,9 +50,5 @@ public class Launcher extends Application {
         scene.setFill(Color.TRANSPARENT);
 
         return scene;
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

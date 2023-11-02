@@ -2,14 +2,30 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane prefHeight="635.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.games.controller.MenuController">
+<Pane prefHeight="635.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.games.controller.pvp.PVPGameController">
 
-    <fx:include source="layout-view.fxml" />
-
-    <VBox alignment="CENTER" layoutY="35.0" prefHeight="600.0" prefWidth="600.0" spacing="10">
-        <Button fx:id="single" mnemonicParsing="false" onAction="#onSinglePlay" text="PVE" />
-        <Button fx:id="online" mnemonicParsing="false" onAction="#onOnlinePlay" prefWidth="257.0" text="PVP" />
+    <fx:include fx:id="topBar" source="layout-view.fxml" />
+    <FlowPane id="board" layoutY="35.0" prefHeight="600.0" prefWidth="600.0">
+        <Button fx:id="btn1" prefHeight="200" prefWidth="200" />
+        <Button fx:id="btn2" prefHeight="200" prefWidth="200" />
+        <Button fx:id="btn3" prefHeight="200" prefWidth="200" />
+        <Button fx:id="btn4" prefHeight="200" prefWidth="200" />
+        <Button fx:id="btn5" prefHeight="200" prefWidth="200" />
+        <Button fx:id="btn6" prefHeight="200" prefWidth="200" />
+        <Button fx:id="btn7" prefHeight="200" prefWidth="200" />
+        <Button fx:id="btn8" prefHeight="200" prefWidth="200" />
+        <Button fx:id="btn9" prefHeight="200" prefWidth="200" />
+    </FlowPane>
+    <VBox fx:id="waitingBox" alignment="CENTER" layoutY="35.0" prefHeight="600.0" prefWidth="600.0">
+        <Label id="waitingText" text="Waiting for second Player">
+            <font>
+                <Font name="JetBrains Mono Bold" size="30.0" />
+            </font>
+        </Label>
     </VBox>
-
+    <VBox fx:id="restart" alignment="CENTER" layoutY="35.0" prefHeight="600.0" prefWidth="600.0" visible="false">
+        <Button id="restartBtn" mnemonicParsing="false" onAction="#onRestart" text="Restart Game" />
+    </VBox>
 </Pane>

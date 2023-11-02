@@ -8,15 +8,15 @@
 
     <HBox id="menu" fx:id="logMenu" alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="600.0" spacing="10">
         <HBox>
-            <Button id="close" fx:id="closeLog" mnemonicParsing="false" onAction="#onApplicationClose" prefHeight="35.0" prefWidth="35.0" text="✕" />
-            <Button id="minimize" fx:id="minimizeLog" mnemonicParsing="false" onAction="#onApplicationMinimize" prefHeight="35.0" prefWidth="35.0" text="―" />
+            <Button id="close" mnemonicParsing="false" onAction="#onApplicationClose" prefHeight="35.0" prefWidth="35.0" text="✕" />
+            <Button id="minimize" mnemonicParsing="false" onAction="#onApplicationMinimize" prefHeight="35.0" prefWidth="35.0" text="―" />
         </HBox>
     </HBox>
     <ScrollPane fitToWidth="true" layoutY="35.0">
-        <VBox id="textBox" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="600.0" translateY="35.0">
+        <VBox id="textBox" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="600.0">
             <Text fx:id="text" fill="#ede6d4" text="File Not Found" wrappingWidth="580.0">
                 <font>
-                    <Font size="30.0"/>
+                    <Font size="20.0" />
                 </font>
            </Text>
         </VBox>

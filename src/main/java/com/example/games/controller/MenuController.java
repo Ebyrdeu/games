@@ -3,13 +3,10 @@ package com.example.games.controller;
 import com.example.games.lib.utils.Log;
 import com.example.games.lib.utils.Utils;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 import java.io.IOException;
 
 public class MenuController {
-    public Button single;
-    public Button online;
 
     @FXML
     void onSinglePlay() {

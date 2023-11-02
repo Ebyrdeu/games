@@ -14,7 +14,7 @@ public class Log {
 
     static {
         try {
-            FileHandler fileHandler = new FileHandler("src/main/resources/logs/server.log", true);
+            var fileHandler = new FileHandler("src/main/resources/logs/logs.log", true);
             fileHandler.setFormatter(new SimpleFormatter());
             LOGGER.addHandler(fileHandler);
         } catch (IOException e) {
@@ -24,10 +24,6 @@ public class Log {
 
     public static void info(String message) {
         LOGGER.info(message);
-    }
-
-    public static void error() {
-        LOGGER.severe("Error");
     }
 
     public static void error(String message) {

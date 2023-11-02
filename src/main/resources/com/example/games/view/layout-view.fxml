@@ -10,17 +10,21 @@
     <HBox spacing="10" id="menu" alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0"
           prefWidth="600.0">
         <HBox>
-            <Button fx:id="close" mnemonicParsing="false" onAction="#onApplicationClose" prefHeight="35.0"
+            <Button id="close" mnemonicParsing="false" onAction="#onApplicationClose" prefHeight="35.0"
                     prefWidth="35.0" text="✕"/>
-            <Button fx:id="minimize" mnemonicParsing="false" onAction="#onApplicationMinimize" prefHeight="35.0"
+            <Button id="minimize" mnemonicParsing="false" onAction="#onApplicationMinimize" prefHeight="35.0"
                     prefWidth="35.0" text="―"/>
-            <Button fx:id="logWindow" mnemonicParsing="false" onAction="#onLogWindowOpen" prefHeight="35.0"
+            <Button id="logWindow" mnemonicParsing="false" onAction="#onLogWindowOpen" prefHeight="35.0"
                     prefWidth="35.0" text="録"/>
+            <Button id="backToMainMenu" mnemonicParsing="false" onAction="#onBackToMainMenu" prefHeight="35.0"
+                    prefWidth="35.0" text="戻"/>
         </HBox>
-
-        <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" spacing="10">
-            <Label id="gameScore" disable="true" text="0:0"/>
+        <Pane HBox.hgrow="ALWAYS">
+            <HBox maxWidth="Infinity" maxHeight="Infinity" />
+        </Pane>
+        <HBox id="scoreBox" alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" spacing="10">
             <Label id="gameStatus" disable="true"/>
+            <Label id="gameScore" disable="true" text="0:0"/>
         </HBox>
     </HBox>
 

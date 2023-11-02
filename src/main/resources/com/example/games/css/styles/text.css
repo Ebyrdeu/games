@@ -1,0 +1,27 @@
+#gameStatus, #gameScore {
+    -fx-text-fill: #a4cbb4;
+    -fx-font-weight: 900;
+    -fx-font-size: 20px;
+
+}
+
+
+
+#textBox {
+    -fx-background-color: transparent;
+}
+
+#waitingText {
+    -fx-text-fill: #a4cbb4;
+    -fx-font-weight: 900;
+    -fx-font-size: 30px;
+}
+
+#joinText {
+    -fx-background-color:  rgba(164, 203, 180, 0.4);
+    -fx-background-radius: 10px;
+}
+
+#scoreBox {
+    -fx-padding: 0px 10px 0px 0px;
+}

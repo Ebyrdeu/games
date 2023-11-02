@@ -8,8 +8,8 @@
     <fx:include source="layout-view.fxml" />
 
     <VBox alignment="CENTER" layoutY="35.0" prefHeight="600.0" prefWidth="600.0" spacing="10">
-        <Button fx:id="single" mnemonicParsing="false" onAction="#onSinglePlay" text="PVE" />
-        <Button fx:id="online" mnemonicParsing="false" onAction="#onOnlinePlay" prefWidth="257.0" text="PVP" />
+        <Button id="single" mnemonicParsing="false" onAction="#onSinglePlay" text="PVE" />
+        <Button id="online" mnemonicParsing="false" onAction="#onOnlinePlay" prefWidth="257.0" text="PVP" />
     </VBox>
 
 </Pane>

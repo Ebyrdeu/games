@@ -1,0 +1,60 @@
+.root {
+    -fx-background-radius: 10px;
+    -fx-accent: #DC8850;
+    -fx-focus-color: -fx-accent;
+    -fx-base: rgba(40, 36, 37, 0.8);
+    -fx-background-color: -fx-base;
+    -fx-control-inner-background: -fx-base;
+    -fx-control-inner-background-alt: -fx-control-inner-background;
+    -fx-font-family: 'JetBrains Mono', monospace;
+}
+
+/*SCROLL*/
+
+.scroll-bar {
+    -fx-background-color: transparent
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #a4cbb4;
+}
+
+.scroll-pane > .scroll-bar > .increment-button, .scroll-pane > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}
+
+
+
+/*BUTTON*/
+
+.button:default {
+    -fx-base: -fx-accent;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-focus-traversable: false;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-text-fill: #282425;
+
+}
+

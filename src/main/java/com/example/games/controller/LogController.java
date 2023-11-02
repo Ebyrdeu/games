@@ -1,5 +1,7 @@
 package com.example.games.controller;
 
+
+
 import com.example.games.LogLauncher;
 import com.example.games.lib.utils.Log;
 import javafx.event.ActionEvent;
@@ -11,12 +13,9 @@ import javafx.stage.Stage;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class LogController {
-    public Button closeLog;
-    public Button minimizeLog;
     public HBox logMenu;
     public Text text;
 
@@ -34,18 +33,12 @@ public class LogController {
         });
     }
 
-    @FXML
-    void initialize() {
-        onWindowDrag();
-        logs();
-    }
-
     private void logs() {
-        try (InputStream inputStream = getClass().getResourceAsStream("/logs/server.log")) {
+        try (var inputStream = getClass().getResourceAsStream("/logs/logs.log")) {
             if (inputStream == null) return;
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            StringBuilder stringBuilder = new StringBuilder();
+            var reader = new BufferedReader(new InputStreamReader(inputStream));
+            var stringBuilder = new StringBuilder();
 
             for (String line; (line = reader.readLine()) != null; ) {
                 stringBuilder.append(line).append('\n');
@@ -59,14 +52,20 @@ public class LogController {
     }
 
     @FXML
+    void initialize() {
+        onWindowDrag();
+        logs();
+    }
+
+    @FXML
     void onApplicationClose(ActionEvent event) {
-        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        var stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.close();
     }
 
     @FXML
     void onApplicationMinimize(ActionEvent event) {
-        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        var stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.setIconified(true);
     }
 

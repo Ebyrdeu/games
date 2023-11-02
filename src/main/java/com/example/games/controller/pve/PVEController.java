@@ -1,4 +1,4 @@
-package com.example.games.controller;
+package com.example.games.controller.pve;
 
 import com.example.games.model.PVEModel;
 import javafx.fxml.FXML;
@@ -28,22 +28,9 @@ public class PVEController {
     public Button btn8;
     public Button btn9;
 
-    public void initialize() {
-        btnList = List.of(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);
-        btnList.forEach(this::onBtnClick);
-        getLabels();
-    }
-
     private void getLabels() {
         gameStatus = (Label) topBar.lookup("#gameStatus");
         gameScore = (Label) topBar.lookup("#gameScore");
-    }
-
-    private void onBtnClick(Button btn) {
-        btn.setOnAction(e -> {
-            setMove(btn, "X");
-            setComputeMove(btnList);
-        });
     }
 
     private void setMove(Button btn, String symbol) {
@@ -62,7 +49,7 @@ public class PVEController {
         setMove(ComputerBtn, "O");
     }
 
-    public void setGameOver() {
+    private void setGameOver() {
         if (PVEModel.isGameOver(btnList, "X")) {
             playerScore++;
             gameOverStatuses("You Won");
@@ -80,6 +67,21 @@ public class PVEController {
         btnList.forEach(btn -> btn.setDisable(true));
         gameStatus.setText(winner);
         restart.setVisible(true);
+    }
+
+    @FXML
+    void initialize() {
+        btnList = List.of(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);
+        btnList.forEach(this::onBtnClick);
+        getLabels();
+    }
+
+    @FXML
+    void onBtnClick(Button btn) {
+        btn.setOnAction(e -> {
+            setMove(btn, "X");
+            setComputeMove(btnList);
+        });
     }
 
 

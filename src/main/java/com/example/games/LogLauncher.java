@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class LogLauncher extends Application {
     private static Stage primaryStage;
@@ -24,13 +25,13 @@ public class LogLauncher extends Application {
     }
 
     public void openNewWindow() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/log-view.fxml"));
-        Parent root = fxmlLoader.load();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/log-view.fxml")));
 
-        Stage stage = new Stage();
-        stage.initStyle(StageStyle.TRANSPARENT);
-        Scene scene = new Scene(root, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
+        var scene = new Scene(root, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
         scene.setFill(Color.TRANSPARENT);
+
+        var stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         primaryStage = stage;
         stage.show();
