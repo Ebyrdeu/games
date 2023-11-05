@@ -26,14 +26,6 @@ public class Launcher extends Application {
         return scene;
     }
 
-    @Override
-    public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/menu-view.fxml")));
-
-        var scene = getScene(root);
-        getStage(stage, scene);
-    }
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -43,6 +35,14 @@ public class Launcher extends Application {
         stage.setScene(scene);
         primaryStage = stage;
         stage.show();
+    }
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/menu-view.fxml")));
+
+        var scene = getScene(root);
+        getStage(stage, scene);
     }
 
     private Scene getScene(Parent root) {

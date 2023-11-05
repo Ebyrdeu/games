@@ -11,6 +11,8 @@ public class Constants {
             {0, 4, 8}, {2, 4, 6},
     };
 
+    public static final int PORT = 8000;
+
     private Constants() {
     }
 }

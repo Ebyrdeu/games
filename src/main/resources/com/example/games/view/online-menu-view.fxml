@@ -7,7 +7,7 @@
 
     <fx:include source="layout-view.fxml" />
     <VBox alignment="CENTER" layoutY="35.0" prefHeight="565.0" prefWidth="600.0" spacing="10">
-       <TextField fx:id="joinText" alignment="CENTER" visible="false"/>
+       <TextField fx:id="joinText" alignment="CENTER" visible="false" text="localhost"/>
         <Button id="startServer" onAction="#onServerStart" text="Host Game" />
         <Button fx:id="joinServer" onAction="#onServerJoin" text="Enter ip to join" />
     </VBox>

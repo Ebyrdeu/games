@@ -1,6 +1,5 @@
 package com.example.games.controller.pvp;
 
-import com.example.games.lib.utils.Log;
 import com.example.games.lib.utils.Utils;
 import com.example.games.networking.Client;
 import com.example.games.networking.Server;
@@ -17,9 +16,8 @@ public class PVPMenuController {
 
     private void gameScene() {
         try {
-            if (Server.isServerRunning()) Utils.changeScene("online-game-view.fxml");
+            if (Server.isServerRunning() || Client.isClientRunning()) Utils.changeScene("online-game-view.fxml", "Multiplayer game");
         } catch (IOException e) {
-            Log.error("Failed to change online-game-view.fxml");
             throw new RuntimeException(e);
         }
     }

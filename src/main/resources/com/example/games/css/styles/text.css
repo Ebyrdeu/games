@@ -1,5 +1,5 @@
 #gameStatus, #gameScore {
-    -fx-text-fill: #a4cbb4;
+    -fx-text-fill: #89B4FA;
     -fx-font-weight: 900;
     -fx-font-size: 20px;
 
@@ -12,13 +12,13 @@
 }
 
 #waitingText {
-    -fx-text-fill: #a4cbb4;
+    -fx-text-fill: #89B4FA;
     -fx-font-weight: 900;
     -fx-font-size: 30px;
 }
 
 #joinText {
-    -fx-background-color:  rgba(164, 203, 180, 0.4);
+    -fx-background-color: rgba(148, 226, 213, 0.4);
     -fx-background-radius: 10px;
 }
 

@@ -1,7 +1,10 @@
 package com.example.games.controller.pvp;
 
+import com.example.games.model.PVPGameModel;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -10,7 +13,6 @@ import java.util.List;
 public class PVPGameController {
     public Pane topBar;
     public VBox waitingBox;
-    private List<Button> btnList;
     public Button btn1;
     public Button btn2;
     public Button btn3;
@@ -21,15 +23,38 @@ public class PVPGameController {
     public Button btn8;
     public Button btn9;
     public VBox restart;
+    private Label gameStatus;
+    private Label gameScore;
+    private List<Button> btnList;
 
+    private void onButtonClick(Button btn) {
+        btn.setOnAction(e -> {
+            btn.setText("X");
+            btn.setDisable(true);
+        });
+    }
+
+    private void getLabels() {
+        gameStatus = (Label) topBar.lookup("#gameStatus");
+        gameScore = (Label) topBar.lookup("#gameScore");
+    }
 
     @FXML
     void initialize() {
         btnList = List.of(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);
+        btnList.forEach(this::onButtonClick);
+
+        Platform.runLater(() -> PVPGameModel.hideWaitingBox(waitingBox));
     }
 
 
     @FXML
     void onRestart() {
+        btnList.forEach(btn -> {
+            btn.setText("");
+            btn.setDisable(false);
+        });
+        restart.setVisible(false);
+        gameStatus.setText("");
     }
 }

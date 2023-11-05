@@ -1,7 +1,7 @@
 #single, #online, #restartBtn, #startServer, #joinServer {
     -fx-label-padding: 10px;
-    -fx-text-fill: #282425;
-    -fx-background-color: #a4cbb4;
+    -fx-text-fill: #1E1E2EFF;
+    -fx-background-color: #89B4FA;
     -fx-background-radius: 40px;
     -fx-pref-width: 200px;
     -fx-font-size: 20px;
@@ -12,16 +12,16 @@
 
 
 #joinServer {
-    -fx-background-color: #ef9995;
+    -fx-background-color: #F38BA8;
 
 }
 
 #joinServer:hover {
-    -fx-background-color: derive(#ef9995, -15%);
+    -fx-background-color: derive(#F38BA8, -15%);
 }
 
 #single:hover, #online:hover, #startServer:hover {
-    -fx-background-color: derive(#a4cbb4, -15%);
+    -fx-background-color: derive(#89B4FA, -15%);
 }
 
 #btn7 {
@@ -39,5 +39,5 @@
 }
 
 #board > .button:hover {
-    -fx-background-color: rgba(164, 203, 180, 0.4);
+    -fx-background-color: rgba(137, 180, 250, 0.4);
 }

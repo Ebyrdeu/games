@@ -7,10 +7,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class Log {
-    private static final Logger LOGGER = Logger.getLogger(Log.class.getName());
-
-    private Log() {
-    }
+    private static final Logger LOGGER = Logger.getLogger("");
 
     static {
         try {
@@ -18,16 +15,28 @@ public class Log {
             fileHandler.setFormatter(new SimpleFormatter());
             LOGGER.addHandler(fileHandler);
         } catch (IOException e) {
-            LOGGER.log(Level.WARNING, "Failed to create log file", e);
+            LOGGER.severe("Failed to create log file");
+            throw new RuntimeException(e);
         }
     }
 
-    public static void info(String message) {
-        LOGGER.info(message);
+    private Log() {
+
     }
 
-    public static void error(String message) {
-        LOGGER.severe(message);
+    public static void message(String message) {
+        logMessage(message);
+    }
+
+
+    private static void logMessage(String message) {
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        if (stackTraceElements.length > 3) {
+            var callingClassName = stackTraceElements[3].getClassName();
+            LOGGER.logp(Level.INFO, callingClassName, "", message);
+        } else {
+            LOGGER.info(message);
+        }
     }
 
 }

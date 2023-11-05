@@ -11,11 +11,6 @@ import java.util.List;
 import java.util.Random;
 
 public class PVEController {
-    private Label gameStatus;
-    private Label gameScore;
-    private List<Button> btnList;
-    private int playerScore = 0;
-    private int computerScore = 0;
     public VBox restart;
     public Pane topBar;
     public Button btn1;
@@ -27,6 +22,11 @@ public class PVEController {
     public Button btn7;
     public Button btn8;
     public Button btn9;
+    private Label gameStatus;
+    private Label gameScore;
+    private List<Button> btnList;
+    private int playerScore = 0;
+    private int computerScore = 0;
 
     private void getLabels() {
         gameStatus = (Label) topBar.lookup("#gameStatus");
@@ -52,10 +52,10 @@ public class PVEController {
     private void setGameOver() {
         if (PVEModel.isGameOver(btnList, "X")) {
             playerScore++;
-            gameOverStatuses("You Won");
+            gameOverStatuses("You Won!");
         } else if (PVEModel.isGameOver(btnList, "O")) {
             computerScore++;
-            gameOverStatuses("You Lost");
+            gameOverStatuses("You Lost!");
         } else if (PVEModel.isTie(btnList)) {
             gameOverStatuses("It's a Tie!");
         }

@@ -19,6 +19,10 @@ public class LogLauncher extends Application {
         return primaryStage;
     }
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
         openNewWindow();
@@ -33,11 +37,8 @@ public class LogLauncher extends Application {
         var stage = new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
+        stage.setTitle("Log menu");
         primaryStage = stage;
         stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

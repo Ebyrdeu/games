@@ -1,7 +1,6 @@
 package com.example.games.controller;
 
 
-
 import com.example.games.LogLauncher;
 import com.example.games.lib.utils.Log;
 import javafx.event.ActionEvent;
@@ -47,7 +46,7 @@ public class LogController {
             text.setText(stringBuilder.toString());
             reader.close();
         } catch (IOException e) {
-            Log.error("Error on Log Load: " + e.getMessage());
+            Log.message("Error on Log Load: " + e.getMessage());
         }
     }
 

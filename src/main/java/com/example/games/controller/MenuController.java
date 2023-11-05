@@ -11,9 +11,9 @@ public class MenuController {
     @FXML
     void onSinglePlay() {
         try {
-            Utils.changeScene("single-view.fxml");
+            Utils.changeScene("single-view.fxml", "Single player");
         } catch (IOException e) {
-            Log.error("Error on single-view.fxml");
+            Log.message("Error on single-view.fxml");
             throw new RuntimeException(e);
         }
     }
@@ -21,9 +21,9 @@ public class MenuController {
     @FXML
     void onOnlinePlay() {
         try {
-            Utils.changeScene("online-menu-view.fxml");
+            Utils.changeScene("online-menu-view.fxml", "Multiplayer menu");
         } catch (IOException e) {
-            Log.error("Error on online-menu-view.fxml");
+            Log.message("Error on online-menu-view.fxml");
             throw new RuntimeException(e);
         }
     }

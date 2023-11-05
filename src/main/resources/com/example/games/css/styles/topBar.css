@@ -1,5 +1,5 @@
 #menu {
-    -fx-background-color: rgba(40, 36, 37, 0.9);
+    -fx-background-color: #1E1E2EFF;
     -fx-background-radius: 10px 10px 0px 0px;
 }
 
@@ -8,11 +8,11 @@
 }
 
 #close, #minimize, #logWindow, #backToMainMenu {
-    -fx-text-fill: #e4d8b4;
+    -fx-text-fill: #CDD6F4;
 }
 
 #close:hover, #minimize:hover, #logWindow:hover, #backToMainMenu:hover {
-    -fx-text-fill: #EDE6D4;
+    -fx-text-fill: #CDD6F4;
 }
 
 #close {
@@ -25,23 +25,10 @@
 
 
 
-#logWindow:hover {
-    -fx-background-color: #DC8850;
+#logWindow:hover, #backToMainMenu:hover, #minimize:hover, #clearLogs:hover  {
+
+    -fx-background-color: derive(#1E1E2EFF, 15%);
 }
-
-#backToMainMenu:hover {
-    -fx-background-color: #ef9995;
-
-}
-
-#minimize:hover {
-    -fx-background-color: #2563eb;
-}
-
-#clearLogs:hover{
-    -fx-background-color: #e4d8b4;
-}
-
 
 #minimize, #logWindow, #backToMainMenu, #clearLogs {
     -fx-background-radius: 0px;

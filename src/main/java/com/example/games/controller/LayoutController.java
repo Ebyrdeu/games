@@ -52,16 +52,16 @@ public class LayoutController {
         try {
             logLauncher.openNewWindow();
         } catch (IOException e) {
-            Log.error("onLogWindowOpen error: " + e.getMessage());
+            Log.message("onLogWindowOpen error: " + e.getMessage());
         }
     }
 
     @FXML
     void onBackToMainMenu() {
         try {
-            Utils.changeScene("menu-view.fxml");
+            Utils.changeScene("menu-view.fxml", "Main menu");
         } catch (IOException e) {
-            Log.error("Error on menu-view.fxml");
+            Log.message("Error on menu-view.fxml");
             throw new RuntimeException(e);
         }
     }
