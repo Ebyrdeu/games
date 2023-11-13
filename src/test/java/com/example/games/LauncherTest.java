@@ -97,7 +97,7 @@ class LauncherTest extends ApplicationTest {
             });
 
 
-            clickOn(btn6);
+            clickOn("#btn6");
 
             verifyThat(gameStatus, label -> label.getText().equals("It's a Tie!"));
             verifyThat(gameScore, label -> label.getText().equals("0:0"));

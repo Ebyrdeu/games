@@ -3,44 +3,37 @@ package com.example.games.networking;
 import com.example.games.lib.utils.Constants;
 import com.example.games.lib.utils.Log;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Server {
-    private static final AtomicInteger activeConnections = new AtomicInteger(1);
+
     private static ServerSocket serverSocket;
+    private static BufferedReader in;
+    private static PrintWriter out;
 
     private Server() {
     }
 
-    private static void close(Socket socket) {
-        try {
-            socket.close();
-        } catch (IOException e) {
-            Log.message("Server Error on Close");
-            throw new RuntimeException(e);
-        }
-    }
 
     private static void handleConnection(Socket socket) {
         try {
-            getActiveConnections().incrementAndGet();
-            Log.message("Total users now: " + Server.getActiveConnectionsValues());
+            NetworkUtils.incrementAndIsUser2();
 
-            var fromClient = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            Log.message("Total users now: " + NetworkUtils.getActiveConnectionsValues());
 
-            Log.message("From Client : " + fromClient.readLine());
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            var toClient = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            toClient.write("Server!\n");
-            toClient.flush();
+            Log.message("From Client : " + in.readLine());
+
+            out = new PrintWriter(socket.getOutputStream(), true);
+            out.write("Server!\n");
         } catch (IOException e) {
-            Log.message("Server Error on handleConnection");
-            throw new RuntimeException(e);
-        } finally {
-            close(socket);
+            NetworkUtils.close(socket, in, out);
         }
     }
 
@@ -56,15 +49,6 @@ public class Server {
             throw new RuntimeException(e);
         }
     }
-
-    public static AtomicInteger getActiveConnections() {
-        return activeConnections;
-    }
-
-    public static int getActiveConnectionsValues() {
-        return activeConnections.get();
-    }
-
 
     public static boolean isServerRunning() {
         return serverSocket != null && !serverSocket.isClosed() && serverSocket.isBound();
