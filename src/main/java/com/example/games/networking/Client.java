@@ -3,7 +3,10 @@ package com.example.games.networking;
 import com.example.games.lib.utils.Constants;
 import com.example.games.lib.utils.Log;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 public class Client {
@@ -13,6 +16,14 @@ public class Client {
     private static PrintWriter out;
 
     private Client() {
+    }
+
+    public static void send(String msg) {
+        out.println(msg);
+    }
+
+    public static void onMessage(String msg) throws IOException {
+        System.out.println(msg + in.readLine());
     }
 
     public static boolean isClientRunning() {
@@ -27,14 +38,14 @@ public class Client {
     private static void clientProps(String host) {
         try {
             clientSocket = new Socket(host, Constants.PORT);
-            in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-
-            NetworkUtils.incrementAndIsUser2();
-
+            NetworkUtils.setNewUser();
             while (!clientSocket.isClosed()) {
-                var message = in.readLine();
-                if (message != null) Log.message("Server says: " + message);
-                else Log.message("Server disconnected");
+                in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                onMessage("Message received: ");
+
+                out = new PrintWriter(clientSocket.getOutputStream(), true);
+                out.println("Hello 2");
+
             }
         } catch (IOException e) {
             NetworkUtils.close(clientSocket, in, out);

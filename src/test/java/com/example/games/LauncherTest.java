@@ -798,32 +798,36 @@ class LauncherTest extends ApplicationTest {
         @Nested
         @DisplayName("Drag Window")
         class DragWindow {
-            @Test
-            @DisplayName("right")
-            void right() {
-                drag("#menu").moveBy(300, 0);
-                assertTrue(stage.getX() == 1280.0 && stage.getY() == 268.0);
-            }
+            @Nested
+            @DisplayName("2560x1400")
+            class Resolution2k {
+                @Test
+                @DisplayName("right")
+                void right() {
+                    drag("#menu").moveBy(300, 0);
+                    assertTrue(stage.getX() == 1280.0 && stage.getY() == 268.0);
+                }
 
-            @Test
-            @DisplayName("left")
-            void left() {
-                drag("#menu").moveBy(-300, 0);
-                assertTrue(stage.getX() == 680.0 && stage.getY() == 268.0);
-            }
+                @Test
+                @DisplayName("left")
+                void left() {
+                    drag("#menu").moveBy(-300, 0);
+                    assertTrue(stage.getX() == 680.0 && stage.getY() == 268.0);
+                }
 
-            @Test
-            @DisplayName("bottom")
-            void bottom() {
-                drag("#menu").moveBy(0, 300);
-                assertTrue(stage.getY() == 568.0 && stage.getX() == 980.0);
-            }
+                @Test
+                @DisplayName("bottom")
+                void bottom() {
+                    drag("#menu").moveBy(0, 300);
+                    assertTrue(stage.getY() == 568.0 && stage.getX() == 980.0);
+                }
 
-            @Test
-            @DisplayName("top")
-            void top() {
-                drag("#menu").moveBy(0, -100);
-                assertTrue(stage.getY() == 168.0 && stage.getX() == 980.0);
+                @Test
+                @DisplayName("top")
+                void top() {
+                    drag("#menu").moveBy(0, -100);
+                    assertTrue(stage.getY() == 168.0 && stage.getX() == 980.0);
+                }
             }
         }
     }

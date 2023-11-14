@@ -11,32 +11,38 @@ import java.net.Socket;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class NetworkUtils {
-    private static final AtomicInteger activeConnections = new AtomicInteger(1);
+    private static final AtomicInteger opponent = new AtomicInteger(0);
     private static final BooleanProperty booleanProperty = new SimpleBooleanProperty(true);
+
+    private NetworkUtils() {
+    }
+
 
     public static BooleanProperty isBooleanProperty() {
         return booleanProperty;
     }
 
-    public static int getActiveConnectionsValues() {
-        return activeConnections.get();
+    public static void setNewUser() {
+        opponent.incrementAndGet();
+        booleanProperty.setValue(opponent.get() != 1);
     }
 
-
-    public static void incrementAndIsUser2() {
-        activeConnections.incrementAndGet();
-        booleanProperty.setValue(activeConnections.get() != 2);
+    private static void deleteUser() {
+        opponent.decrementAndGet();
+        booleanProperty.setValue(opponent.get() != 1);
     }
+
 
     public static void close(Socket socket, BufferedReader in, PrintWriter out) {
         try {
             if (socket != null) socket.close();
             if (in != null) in.close();
             if (out != null) out.close();
-            activeConnections.decrementAndGet();
         } catch (IOException e) {
             Log.message("Error on Close");
             throw new RuntimeException(e);
+        } finally {
+            deleteUser();
         }
     }
 

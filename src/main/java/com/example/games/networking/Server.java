@@ -19,19 +19,24 @@ public class Server {
     private Server() {
     }
 
+    public static void send(String msg) {
+        out.println(msg);
+    }
+
+    public static void onMessage(String msg) throws IOException {
+        System.out.println(msg + in.readLine());
+    }
 
     private static void handleConnection(Socket socket) {
         try {
-            NetworkUtils.incrementAndIsUser2();
-
-            Log.message("Total users now: " + NetworkUtils.getActiveConnectionsValues());
+            NetworkUtils.setNewUser();
 
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-            Log.message("From Client : " + in.readLine());
+            onMessage("Message received: ");
 
             out = new PrintWriter(socket.getOutputStream(), true);
-            out.write("Server!\n");
+            out.println("Hello");
+
         } catch (IOException e) {
             NetworkUtils.close(socket, in, out);
         }
@@ -40,10 +45,7 @@ public class Server {
     private static void serverProps() {
         try {
             serverSocket = new ServerSocket(Constants.PORT);
-            while (!serverSocket.isClosed()) {
-                Socket clientSocket = serverSocket.accept();
-                Thread.startVirtualThread(() -> handleConnection(clientSocket));
-            }
+            while (!serverSocket.isClosed()) handleConnection(serverSocket.accept());
         } catch (IOException e) {
             Log.message("Server Error on serverProps");
             throw new RuntimeException(e);
