@@ -18,10 +18,12 @@ public class Client {
     private Client() {
     }
 
+    // TODO: Need to redo `in` and `out`
     public static void send(String msg) {
         out.println(msg);
     }
 
+    // TODO: Need to redo `in` and `out`
     public static void onMessage(String msg) throws IOException {
         System.out.println(msg + in.readLine());
     }
@@ -38,11 +40,10 @@ public class Client {
     private static void clientProps(String host) {
         try {
             clientSocket = new Socket(host, Constants.PORT);
-            NetworkUtils.setNewUser();
+            NetworkUtils.onOpponentConnect(Client.class);
             while (!clientSocket.isClosed()) {
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 onMessage("Message received: ");
-
                 out = new PrintWriter(clientSocket.getOutputStream(), true);
                 out.println("Hello 2");
 

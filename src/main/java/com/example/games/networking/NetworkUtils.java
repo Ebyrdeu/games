@@ -8,27 +8,40 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class NetworkUtils {
     private static final AtomicInteger opponent = new AtomicInteger(0);
+    private static final List<Class<Client>> opponentList = new ArrayList<>();
     private static final BooleanProperty booleanProperty = new SimpleBooleanProperty(true);
 
     private NetworkUtils() {
     }
 
+    public static boolean getStatusOfOpponent() {
+        return opponentList.isEmpty();
+    }
 
     public static BooleanProperty isBooleanProperty() {
         return booleanProperty;
     }
 
-    public static void setNewUser() {
+    public static void onOpponentConnect() {
         opponent.incrementAndGet();
         booleanProperty.setValue(opponent.get() != 1);
     }
 
-    private static void deleteUser() {
+    public static void onOpponentConnect(Class<Client> connectedOpponent) {
+        opponent.incrementAndGet();
+        opponentList.add(connectedOpponent);
+        booleanProperty.setValue(opponent.get() != 1);
+    }
+
+    private static void onOpponentDisconnect() {
         opponent.decrementAndGet();
+        opponentList.removeLast();
         booleanProperty.setValue(opponent.get() != 1);
     }
 
@@ -42,7 +55,7 @@ public class NetworkUtils {
             Log.message("Error on Close");
             throw new RuntimeException(e);
         } finally {
-            deleteUser();
+            onOpponentDisconnect();
         }
     }
 

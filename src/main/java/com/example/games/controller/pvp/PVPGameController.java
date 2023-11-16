@@ -1,6 +1,7 @@
 package com.example.games.controller.pvp;
 
 import com.example.games.model.PVPGameModel;
+import com.example.games.networking.NetworkUtils;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -29,8 +30,14 @@ public class PVPGameController {
 
     private void onButtonClick(Button btn) {
         btn.setOnAction(e -> {
-            btn.setText("X");
-            btn.setDisable(true);
+            // NOTE: only for testing later move to model
+            if (NetworkUtils.getStatusOfOpponent()) {
+                btn.setText("X");
+                btn.setDisable(true);
+            } else {
+                btn.setText("O");
+                btn.setDisable(true);
+            }
         });
     }
 

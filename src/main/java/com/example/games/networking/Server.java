@@ -19,17 +19,19 @@ public class Server {
     private Server() {
     }
 
+    // TODO: Need to redo `in` and `out`
     public static void send(String msg) {
         out.println(msg);
     }
 
+    // TODO: Need to redo `in` and `out`
     public static void onMessage(String msg) throws IOException {
         System.out.println(msg + in.readLine());
     }
 
     private static void handleConnection(Socket socket) {
         try {
-            NetworkUtils.setNewUser();
+            NetworkUtils.onOpponentConnect();
 
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             onMessage("Message received: ");
